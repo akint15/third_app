@@ -1,14 +1,12 @@
 ThirdApp::Application.routes.draw do
 
+  match '/signup', to: "users#new"
 
- 
-  match '/signup', to: 'users#new'
+  match '/help', to: "static_pages#help"
+  match '/about', to: "static_pages#about"
+  match '/contact', to: "static_pages#contact"
 
-  match '/help', to: 'static_pages#help' #this creates route help_path
-  match '/about', to: 'static_pages#about' #this creates route about_path
-  match '/contact', to: 'static_pages#contact' #this creates route contact_path
-
-  root :to =>'static_pages#home'
+  root :to => 'static_pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +56,7 @@ ThirdApp::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.h
+  # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
